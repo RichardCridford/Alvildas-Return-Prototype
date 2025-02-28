@@ -1,0 +1,218 @@
+fileFormatVersion: 2
+guid: 825510ead77579e40b3741713dac50f3
+timeCreated: 1634734390
+licenseType: Free
+ModelImporter:
+  serializedVersion: 19
+  fileIDToRecycleName:
+    100000: //RootNode
+    100002: Rock_1
+    100004: Rock_2
+    100006: Rock_3
+    100008: Rock_4
+    100010: Rock_5
+    100012: rock_pilar_1
+    100014: rock_pilar_2
+    100016: rock_pilar_3
+    100018: rock_small_1
+    100020: rock_small_2
+    100022: rock_small_3
+    100024: rock_small_4
+    100026: rock_small_5
+    100028: rock_small_6
+    100030: rock_small_7
+    100032: rock_small_8
+    100034: rock_small_9
+    100036: Rocks
+    100038: Tree_1
+    100040: Tree_2
+    100042: Tree_long_1
+    100044: Tree_long_2
+    100046: Tree_long_3
+    100048: Tree_Long_w_leaves_1
+    100050: Tree_Long_w_leaves_2
+    100052: Tree_Long_w_leaves_3
+    100054: Tree_short_1
+    100056: Tree_short_2
+    100058: Trees
+    400000: //RootNode
+    400002: Rock_1
+    400004: Rock_2
+    400006: Rock_3
+    400008: Rock_4
+    400010: Rock_5
+    400012: rock_pilar_1
+    400014: rock_pilar_2
+    400016: rock_pilar_3
+    400018: rock_small_1
+    400020: rock_small_2
+    400022: rock_small_3
+    400024: rock_small_4
+    400026: rock_small_5
+    400028: rock_small_6
+    400030: rock_small_7
+    400032: rock_small_8
+    400034: rock_small_9
+    400036: Rocks
+    400038: Tree_1
+    400040: Tree_2
+    400042: Tree_long_1
+    400044: Tree_long_2
+    400046: Tree_long_3
+    400048: Tree_Long_w_leaves_1
+    400050: Tree_Long_w_leaves_2
+    400052: Tree_Long_w_leaves_3
+    400054: Tree_short_1
+    400056: Tree_short_2
+    400058: Trees
+    2300000: Rock_1
+    2300002: Rock_2
+    2300004: Rock_3
+    2300006: Rock_4
+    2300008: Rock_5
+    2300010: rock_pilar_1
+    2300012: rock_pilar_2
+    2300014: rock_pilar_3
+    2300016: rock_small_1
+    2300018: rock_small_2
+    2300020: rock_small_3
+    2300022: rock_small_4
+    2300024: rock_small_5
+    2300026: rock_small_6
+    2300028: rock_small_7
+    2300030: rock_small_8
+    2300032: rock_small_9
+    2300034: Tree_1
+    2300036: Tree_2
+    2300038: Tree_long_1
+    2300040: Tree_long_2
+    2300042: Tree_long_3
+    2300044: Tree_Long_w_leaves_1
+    2300046: Tree_Long_w_leaves_2
+    2300048: Tree_Long_w_leaves_3
+    2300050: Tree_short_1
+    2300052: Tree_short_2
+    3300000: Rock_1
+    3300002: Rock_2
+    3300004: Rock_3
+    3300006: Rock_4
+    3300008: Rock_5
+    3300010: rock_pilar_1
+    3300012: rock_pilar_2
+    3300014: rock_pilar_3
+    3300016: rock_small_1
+    3300018: rock_small_2
+    3300020: rock_small_3
+    3300022: rock_small_4
+    3300024: rock_small_5
+    3300026: rock_small_6
+    3300028: rock_small_7
+    3300030: rock_small_8
+    3300032: rock_small_9
+    3300034: Tree_1
+    3300036: Tree_2
+    3300038: Tree_long_1
+    3300040: Tree_long_2
+    3300042: Tree_long_3
+    3300044: Tree_Long_w_leaves_1
+    3300046: Tree_Long_w_leaves_2
+    3300048: Tree_Long_w_leaves_3
+    3300050: Tree_short_1
+    3300052: Tree_short_2
+    4300000: rock_small_9
+    4300002: rock_small_5
+    4300004: rock_small_1
+    4300006: rock_small_8
+    4300008: rock_small_7
+    4300010: rock_small_6
+    4300012: rock_small_2
+    4300014: rock_small_3
+    4300016: rock_small_4
+    4300018: rock_pilar_3
+    4300020: rock_pilar_2
+    4300022: rock_pilar_1
+    4300024: Rock_3
+    4300026: Rock_4
+    4300028: Rock_5
+    4300030: Rock_2
+    4300032: Rock_1
+    4300034: Tree_Long_w_leaves_3
+    4300036: Tree_Long_w_leaves_2
+    4300038: Tree_Long_w_leaves_1
+    4300040: Tree_long_3
+    4300042: Tree_short_1
+    4300044: Tree_short_2
+    4300046: Tree_long_2
+    4300048: Tree_long_1
+    4300050: Tree_2
+    4300052: Tree_1
+  materials:
+    importMaterials: 1
+    materialName: 0
+    materialSearch: 1
+  animations:
+    legacyGenerateAnimations: 4
+    bakeSimulation: 0
+    resampleCurves: 1
+    optimizeGameObjects: 0
+    motionNodeName: 
+    rigImportErrors: 
+    rigImportWarnings: 
+    animationImportErrors: 
+    animationImportWarnings: 
+    animationRetargetingWarnings: 
+    animationDoRetargetingWarnings: 0
+    animationCompression: 1
+    animationRotationError: 0.5
+    animationPositionError: 0.5
+    animationScaleError: 0.5
+    animationWrapMode: 0
+    extraExposedTransformPaths: []
+    clipAnimations: []
+    isReadable: 1
+  meshes:
+    lODScreenPercentages: []
+    globalScale: 1
+    meshCompression: 0
+    addColliders: 0
+    importBlendShapes: 1
+    swapUVChannels: 0
+    generateSecondaryUV: 0
+    useFileUnits: 1
+    optimizeMeshForGPU: 1
+    keepQuads: 0
+    weldVertices: 1
+    secondaryUVAngleDistortion: 8
+    secondaryUVAreaDistortion: 15.000001
+    secondaryUVHardAngle: 88
+    secondaryUVPackMargin: 4
+    useFileScale: 1
+  tangentSpace:
+    normalSmoothAngle: 60
+    normalImportMode: 0
+    tangentImportMode: 3
+  importAnimation: 1
+  copyAvatar: 0
+  humanDescription:
+    serializedVersion: 2
+    human: []
+    skeleton: []
+    armTwist: 0.5
+    foreArmTwist: 0.5
+    upperLegTwist: 0.5
+    legTwist: 0.5
+    armStretch: 0.05
+    legStretch: 0.05
+    feetSpacing: 0
+    rootMotionBoneName: 
+    rootMotionBoneRotation: {x: 0, y: 0, z: 0, w: 1}
+    hasTranslationDoF: 0
+    hasExtraRoot: 0
+    skeletonHasParents: 1
+  lastHumanDescriptionAvatarSource: {instanceID: 0}
+  animationType: 0
+  humanoidOversampling: 1
+  additionalBone: 0
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
