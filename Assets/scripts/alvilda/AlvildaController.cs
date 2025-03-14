@@ -237,37 +237,39 @@ public class AlvildaController : WaveAffectedObject
 			{
 				if (state != AlvildaState.Occupied)
 				{
-					ChangeState(AlvildaState.Occupied);	
+					ChangeState(AlvildaState.Occupied);
+					return;
 				}
 			}
 
-//////////////////////////////////////// The train carts object has its own soundwave name and its own Tag
-            if (lastWave.type == WaveType.Traincart && collision.collider.tag == GameConst.TRAINCART_TAG)
-            {
-
-                //Alvilda's state changes
-                if (state != AlvildaState.Occupied)
-                {
-                    ChangeState(AlvildaState.Occupied);
-
-                    // Find the transform of the traincart
-                    TrainSpace = collision.collider.GetComponent<Transform>();
-                   
-
-                    //She is parented to the traincart 
-                    ChangeParent();
-
-                }
-            }
-/////////////////////////////////////////////////////////////////////////////////
-          
-
-
-   
-
-            else if (collision.GameObjID() == lastWave.soundObj.ID())
+			//////////////////////////////////////// The train carts object has its own soundwave name and its own Tag
+			if (lastWave.type == WaveType.Traincart && collision.collider.tag == GameConst.TRAINCART_TAG)
 			{
-				ChangeState(AlvildaState.Idle);	
+
+				//Alvilda's state changes
+				if (state != AlvildaState.Occupied)
+				{
+					ChangeState(AlvildaState.Occupied);
+
+					// Find the transform of the traincart
+					TrainSpace = collision.collider.GetComponent<Transform>();
+
+
+					//She is parented to the traincart 
+					ChangeParent();
+					return;
+
+				}
+			}
+			/////////////////////////////////////////////////////////////////////////////////
+
+
+
+
+
+			else if (collision.GameObjID() == lastWave.soundObj.ID())
+			{
+				ChangeState(AlvildaState.Idle);
 			}
 		}
 	}
