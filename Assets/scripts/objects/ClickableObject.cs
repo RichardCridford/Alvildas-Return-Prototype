@@ -42,8 +42,10 @@ public class ClickableObject : MonoBehaviour
 		audioController = GetComponent<PlaySoundOnClick>();;
 		Assert.IsNotNull(audioController);
 
-		rBody = GetComponent<Rigidbody>();
-		Assert.IsNotNull(rBody);
+		// Not having a rigid boy is causing a null reference exception
+		
+		//rBody = GetComponent<Rigidbody>();
+		//Assert.IsNotNull(rBody);
 
 		trans = transform;
 		Assert.IsNotNull(trans);
