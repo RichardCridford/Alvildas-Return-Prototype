@@ -1,6 +1,7 @@
 ﻿using UnityEngine;
 using System;
 using System.Collections;
+using System.Diagnostics;
 
 public class InputController : MonoBehaviour
 {
@@ -94,14 +95,10 @@ public class InputController : MonoBehaviour
 
 				//returns the object number hit by the raycast
 				NumberFromRaycast = rayHit.collider.GetComponent<ObjectIdentifier>().GetWorldObjectNumber();
-					
+
 				//the testNumber stores the data from the raycast
 				// the manager script on the cursor (where also the other sprites are stored, reaches in and grabs the testNumber)
-				
-				
-
-					
-				
+	
 			}
 			
 		}
@@ -205,28 +202,32 @@ public class InputController : MonoBehaviour
 
 	private void controllerCasting()
 	{
+        
+#if UNITY_STANDALONE || UNITY_EDITOR
+			
+		
+		// This code is for interactions with the 'A' Button it checks the button is down then released (not for being held) 
+		if (Input.GetButtonDown("Submit"))
+		{
+			// Check if we find a clickable object, if we do then click it
+			Ray ray = Camera.main.ScreenPointToRay(mrArrow.forTheRaycast);
 
-	#if UNITY_STANDALONE || UNITY_EDITOR
-			if (Input.GetButtonDown("Submit"))
+			Raycast(ray, out objFound, out rayHit);
+
+			if (objFound != null)
 			{
-				// Check if we find a clickable object, if we do then click it
-				Ray ray = Camera.main.ScreenPointToRay(mrArrow.forTheRaycast);
+				Vector3 dir = (transform.position - objFound.transform.position).normalized;
+				p = new Plane(dir, objFound.transform.position);
 
-				Raycast(ray, out objFound, out rayHit);
-
-				if (objFound != null)
+				if (p.Raycast(ray, out enter) == true)
 				{
-					Vector3 dir = (transform.position - objFound.transform.position).normalized;
-					p = new Plane(dir, objFound.transform.position);
-
-					if (p.Raycast(ray, out enter) == true)
-					{
-						objFound.Click(ray.GetPoint(enter));
-					
-					}
+					objFound.Click(ray.GetPoint(enter));
+						
 				}
 			}
-			else if (Input.GetButtonUp("Submit"))
+		}
+			
+		else if (Input.GetButtonUp("Submit"))
 			{
 				// Check if we find a clickable object, if we do then click it
 				GameObject obj = null;
@@ -241,30 +242,80 @@ public class InputController : MonoBehaviour
 					}
 				}
 			}
-			else if (Input.GetButton("Submit"))
-			{
+			
+			 
+			
+			
+		// This section of code is for the 'X' button being held, I found there was a bug when dragging objects, if I just used Input.GetButton, but by adding an extra Raycasr check and additional Inputs
+		// the bug stopped occurring. 
+
+		// This number is from the Object Identifier script and the meaning for the numbers can be found in the mouseCursor script
+		if (NumberFromRaycast == 6)
+		{	
+				if (Input.GetButtonDown("Styx"))
+				{
+					// Check if we find a clickable object, if we do then click it
+					Ray ray = Camera.main.ScreenPointToRay(mrArrow.forTheRaycast);
+
+					Raycast(ray, out objFound, out rayHit);
+
+					if (objFound != null)
+					{
+						Vector3 dir = (transform.position - objFound.transform.position).normalized;
+						p = new Plane(dir, objFound.transform.position);
+
+						if (p.Raycast(ray, out enter) == true)
+						{
+							objFound.Click(ray.GetPoint(enter));
+						
+					
+						}
+					}
+				}
+				else if (Input.GetButtonUp("Styx"))
+				{
+					// Check if we find a clickable object, if we do then click it
+					GameObject obj = null;
+					Ray ray = Camera.main.ScreenPointToRay(mrArrow.forTheRaycast);
+					Raycast(ray, out obj, out rayHit);
+
+					if (objFound != null)
+					{
+						if (p.Raycast(ray, out enter) == true)
+						{
+							objFound.Release(ray.GetPoint(enter));
+						}
+					}
+				}
+				
+				else if (Input.GetButton("Styx"))
+				{
 				Ray ray = Camera.main.ScreenPointToRay(mrArrow.forTheRaycast);
 				GameObject obj = null;
 				Raycast(ray, out obj, out rayHit);
 
-				if (objFound != null)
-				{
-					Vector3 dir = (transform.position - objFound.transform.position).normalized;
-					p = new Plane(dir, objFound.transform.position);
-					if (p.Raycast(ray, out enter) == true)
+					if (objFound != null)
 					{
-						objFound.Drag(ray.GetPoint(enter));
+						Vector3 dir = (transform.position - objFound.transform.position).normalized;
+						p = new Plane(dir, objFound.transform.position);
 						
-					
+						if (p.Raycast(ray, out enter) == true)
+						{
+							objFound.Drag(ray.GetPoint(enter));
+						
+						}	
+						
 					}
 				}
 			}
+
+
 
 			if (Input.GetKeyUp(KeyCode.D))
 			{
 				LevelController.Alvilda.Die();
 			}
-	#elif UNITY_IOS || UNITY_ANDROID
+#elif UNITY_IOS || UNITY_ANDROID
 		//		if (Input.touches.Length > 0)
 		//		{
 		//			for (int i = 0; i < Input.touches.Length; i++)
@@ -292,10 +343,10 @@ public class InputController : MonoBehaviour
 		//				}
 		//			}
 		//		}
-	#endif
+#endif
 
-	}
-//#endregion
+    }
+    //#endregion
 
 
 

@@ -1,6 +1,7 @@
 ﻿using UnityEngine;
 using UnityEngine.Assertions;
 using System.Collections;
+using System.Diagnostics;
 
 public class DraggableWall : DraggableObject
 {
@@ -14,33 +15,41 @@ public class DraggableWall : DraggableObject
 	protected float startAndEndPointsDistance = 0f;
 	protected Vector3 startPos = Vector3.zero;
 	protected Vector3 endPos = Vector3.zero;
-	protected Vector3 endToStartDir = Vector3.zero; 
+	protected Vector3 endToStartDir = Vector3.zero;
 	#endregion
 
+	
+    #region Public Functions 
 
-	#region Public Functions 
 
-	public override void OnClicked(Vector3 worldPos)
+
+    public override void OnClicked(Vector3 worldPos)
 	{
-		this.Log("Clicked \"" + name + "\"", DebugLogLevel.MediumDetails);
+		
+			this.Log("Clicked \"" + name + "\"", DebugLogLevel.MediumDetails);
 
-		worldPos.y = GameConst.HEIGHT;
-		startMouseWorldPos = worldPos;
-		startTransPos = trans.position;
-		startPos = startPosObj.position;
-		endPos = EndPosObject.position;
-		startAndEndPointsDistance = Vector3.Distance(startPosObj.position, EndPosObject.position);
-		endToStartDir = (startPos - endPos).normalized;
+			
+			
 
-		if (SoundsEnabled)
-		{
-			audioController.Play();
-		}
 
-		if (clickedCallbacks != null)
-		{
-			clickedCallbacks();
-		}
+			worldPos.y = GameConst.HEIGHT;
+			startMouseWorldPos = worldPos;
+			startTransPos = trans.position;
+			startPos = startPosObj.position;
+			endPos = EndPosObject.position;
+			startAndEndPointsDistance = Vector3.Distance(startPosObj.position, EndPosObject.position);
+			endToStartDir = (startPos - endPos).normalized;
+
+			if (SoundsEnabled)
+			{
+				audioController.Play();
+			}
+
+			if (clickedCallbacks != null)
+			{
+				clickedCallbacks();
+			}
+		
 	}
 
 	public override void OnDragged(Vector3 worldPos)
@@ -96,5 +105,6 @@ public class DraggableWall : DraggableObject
 		}
 	}
 
-	#endregion
+    #endregion
+ 
 }
