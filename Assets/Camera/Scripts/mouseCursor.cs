@@ -1,5 +1,6 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
+using System.Diagnostics;
 using UnityEngine;
 using UnityEngine.UI;
 
@@ -77,7 +78,7 @@ public class mouseCursor : MonoBehaviour
 		{
 
 			worldObjectName = "Sound Emitter";
-			Debug.Log(worldObjectName);
+			UnityEngine.Debug.Log(worldObjectName);
 			rend.sprite = greenArrow;
 
 		}
@@ -85,7 +86,7 @@ public class mouseCursor : MonoBehaviour
 		if (objectNumber == 2)
 		{
 			worldObjectName = "Horn";
-			Debug.Log(worldObjectName);
+            UnityEngine.Debug.Log(worldObjectName);
 			rend.sprite = greenArrow;
 
 
@@ -96,7 +97,7 @@ public class mouseCursor : MonoBehaviour
 		{
 
 			worldObjectName = "Train Car";
-			Debug.Log(worldObjectName);
+            UnityEngine.Debug.Log(worldObjectName);
 			rend.sprite = blueHand;
 
 		}
@@ -106,7 +107,7 @@ public class mouseCursor : MonoBehaviour
 		{
 
 			worldObjectName = "Bonfire";
-			Debug.Log(worldObjectName);
+            UnityEngine.Debug.Log(worldObjectName);
 			rend.sprite = greenFlame;
 
 		}
@@ -115,22 +116,31 @@ public class mouseCursor : MonoBehaviour
 		if (objectNumber == 5)
 		{
 			worldObjectName = "Door Lever";
-			Debug.Log(worldObjectName);
+            UnityEngine.Debug.Log(worldObjectName);
 			rend.sprite = greenArrow;
 		
 		
 		}
 
-		else if (objectNumber == 6)
+		if (objectNumber == 6)
 		{
 			worldObjectName = "Draggable Wall";
-			Debug.Log(worldObjectName);
+            UnityEngine.Debug.Log(worldObjectName);
 			rend.sprite = blueArrow;
 
 
 		}
 
-	}
+        else if (objectNumber == 7)
+        {
+            worldObjectName = "Draggable Timer Emitter";
+            UnityEngine.Debug.Log(worldObjectName);
+            rend.sprite = blueArrow;
+
+
+        }
+
+    }
 
 
 }
