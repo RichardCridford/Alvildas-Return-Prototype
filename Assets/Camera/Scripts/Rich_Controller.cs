@@ -32,7 +32,7 @@ public class Rich_Controller : MonoBehaviour {
         cameraLeft = Input.GetButton("LeftButton");
         cameraRight = Input.GetButton("RightButton");
 
-        grab = Input.GetButton("Grab");
+        grab = Input.GetButton("Styx");
 
     }
 

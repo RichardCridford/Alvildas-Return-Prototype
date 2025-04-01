@@ -202,7 +202,7 @@ public class InputController : MonoBehaviour
 
 	private void controllerCasting()
 	{
-        
+
 #if UNITY_STANDALONE || UNITY_EDITOR
 			
 		
@@ -252,7 +252,7 @@ public class InputController : MonoBehaviour
 		// This number is from the Object Identifier script and the meaning for the numbers can be found in the mouseCursor script
 		if (NumberFromRaycast == 6)
 		{	
-				if (Input.GetButtonDown("Styx"))
+				if (Input.GetButtonDown("Grab"))
 				{
 					// Check if we find a clickable object, if we do then click it
 					Ray ray = Camera.main.ScreenPointToRay(mrArrow.forTheRaycast);
@@ -272,7 +272,7 @@ public class InputController : MonoBehaviour
 						}
 					}
 				}
-				else if (Input.GetButtonUp("Styx"))
+				else if (Input.GetButtonUp("Grab"))
 				{
 					// Check if we find a clickable object, if we do then click it
 					GameObject obj = null;
@@ -288,7 +288,7 @@ public class InputController : MonoBehaviour
 					}
 				}
 				
-				else if (Input.GetButton("Styx"))
+				else if (Input.GetButton("Grab"))
 				{
 				Ray ray = Camera.main.ScreenPointToRay(mrArrow.forTheRaycast);
 				GameObject obj = null;
