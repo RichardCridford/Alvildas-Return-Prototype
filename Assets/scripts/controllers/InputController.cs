@@ -250,7 +250,7 @@ public class InputController : MonoBehaviour
 		// the bug stopped occurring. 
 
 		// This number is from the Object Identifier script and the meaning for the numbers can be found in the mouseCursor script
-		if ( (NumberFromRaycast ==  6) || (NumberFromRaycast ==  7) )
+		if ( (NumberFromRaycast ==  3) || (NumberFromRaycast ==  6) || (NumberFromRaycast ==  7) )
 		{	
 				if (Input.GetButtonDown("Grab"))
 				{

@@ -49,6 +49,9 @@ public class HornSoundEmitterClickable : HornSoundEmitter
 	protected virtual void OnClicked()
 	{
 		TryToEmit();
+		UnityEngine.Debug.Log("Reached this code");
+
+        
 	}
 
 	protected virtual void OnReleased()

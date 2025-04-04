@@ -243,7 +243,8 @@ public class AlvildaController : WaveAffectedObject
 			}
 
 			//////////////////////////////////////// The train carts object has its own soundwave name and its own Tag
-			if (lastWave.type == WaveType.Traincart && collision.collider.tag == GameConst.TRAINCART_TAG)
+			/// Swapped to using horn soundwave instead
+			if (lastWave.type == WaveType.Horn && collision.collider.tag == GameConst.TRAINCART_TAG)
 			{
 
 				//Alvilda's state changes
