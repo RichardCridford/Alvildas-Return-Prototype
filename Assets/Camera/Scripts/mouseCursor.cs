@@ -140,6 +140,18 @@ public class mouseCursor : MonoBehaviour
 
         }
 
+	}
+
+	public void HideCursor()
+    {
+
+
+
+        //if (removepointer)
+        //{
+
+            Cursor.visible = false;
+        //}
     }
 
 
