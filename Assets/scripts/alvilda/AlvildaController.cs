@@ -1,6 +1,7 @@
 ﻿using UnityEngine;
 using UnityEngine.Assertions;
 using System.Collections;
+using System.Security.Cryptography;
 
 public class AlvildaController : WaveAffectedObject
 {
@@ -13,12 +14,15 @@ public class AlvildaController : WaveAffectedObject
     // I wrote this 
     private GameObject Alvilda;
     private Transform TrainSpace;
+
+
+	[SerializeField] Transform EndofLevelSpace;
     //
-	
-    
-    
+
+
+
     // Unity Editor Variables
-	[Header("Curious State")]
+    [Header("Curious State")]
 	[SerializeField] protected float curiousToIdleDelay;
 
 	[Header("Idle State")]
@@ -132,6 +136,8 @@ public class AlvildaController : WaveAffectedObject
 
 
     }
+
+	
 
  //////////////////////////////////////////////////////////////////////////////////////////
   
@@ -553,4 +559,14 @@ public class AlvildaController : WaveAffectedObject
 		ChangeState(AlvildaState.Idle); 
 	
 	}
+
+    // Made this for end of level scene
+	// Change from wandering to regular movement
+	public void AlvildaEndLevel()
+    {
+        ChangeState(AlvildaState.Wandering);
+
+		wanderingTarget = EndofLevelSpace.position;
+
+    }
 }

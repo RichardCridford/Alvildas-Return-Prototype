@@ -3,50 +3,36 @@ using System.Collections;
 using System.Collections.Generic;
 using System.Diagnostics;
 using UnityEngine;
-using UnityEngine.SceneManagement;
+
 
 public class EndofLevel : MonoBehaviour
 {
-    [SerializeField] float delayInSeconds = 10f;
+    
     [SerializeField] AlvildaController alvildaController;
     
     public GameObject Mymousepointer;
+    public Animator animator;
 
-     private void OnTriggerEnter(Collider collision)
+   
+    
+    private void OnTriggerEnter(Collider collision)
     {
 
 
         if (collision.tag == "alvilda")
         {
+            // Stop Alvilda moving
+            //alvildaController.AlvildaMovementOverride();
 
-            //UnityEngine.Debug.Log("Alvilda entered box collider");
-            alvildaController.AlvildaMovementOverride();
+            alvildaController.AlvildaEndLevel();
 
-            StartCoroutine(WaitAndLoad());
+            // Turn off mouse cursor
+            Mymousepointer.SetActive(false);
+
+            // Set the bool to start the animation of the turning stones
+            animator.SetBool("PlayOnce", true);
 
 
         }
-    }
-
-    
-    
-        
-
-
-    IEnumerator WaitAndLoad()
-    {
-        // Stop Alvilda moving
-        alvildaController.AlvildaMovementOverride();
-
-        // Turn off mouse cursor
-        Mymousepointer.SetActive(false);
-
-
-        // Wait
-        yield return new WaitForSeconds(delayInSeconds);
-        
-        // Load the next available scene
-        SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex + 1);
-
-    }
+    }  
 }
