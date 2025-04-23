@@ -371,14 +371,21 @@ public class AlvildaController : WaveAffectedObject
 				movement.MoveDirection(direction);
 				break;
 
-			case AlvildaState.Dead:
+	
+            case AlvildaState.Dead:
 				movement.Stop();
 				curiousMarker.TurnOff();
 				lastWave = null;
 				lastHitPoint = null;
 				break;
 
-			default:
+			// I added this, Game Enum are in the GameEnums script in the extensions folder.
+            case AlvildaState.Cutscene:
+                curiousMarker.TurnOn();
+				movement.MoveTo(EndofLevelSpace.position);
+                break;
+
+            default:
 				this.LogError("NOT IMPLEMENTED FOR: " + newState.ToString(), DebugLogLevel.OnlyImportant);
 				break;
 		}
@@ -564,9 +571,7 @@ public class AlvildaController : WaveAffectedObject
 	// Change from wandering to regular movement
 	public void AlvildaEndLevel()
     {
-        ChangeState(AlvildaState.Wandering);
-
-		wanderingTarget = EndofLevelSpace.position;
+		ChangeState(AlvildaState.Cutscene);
 
     }
 }

@@ -32,7 +32,7 @@ public class EndofLevel : MonoBehaviour
             // Set the bool to start the animation of the turning stones
             animator.SetBool("PlayOnce", true);
 
-
+            
         }
     }  
 }

@@ -26,7 +26,10 @@ public enum AlvildaState
 	Curious,
 	Wandering,
 	MovingTowardsSound,
-	Dead
+	Dead,
+
+	// Created by me
+	Cutscene
 }
 
 public enum WaveType
