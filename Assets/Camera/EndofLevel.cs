@@ -22,9 +22,10 @@ public class EndofLevel : MonoBehaviour
         if (collision.tag == "alvilda")
         {
             // Stop Alvilda moving
-            //alvildaController.AlvildaMovementOverride();
+            alvildaController.AlvildaMovementOverride();
 
-            alvildaController.AlvildaEndLevel();
+            // Move to the EoL position
+            //alvildaController.AlvildaEndLevel();
 
             // Turn off mouse cursor
             Mymousepointer.SetActive(false);

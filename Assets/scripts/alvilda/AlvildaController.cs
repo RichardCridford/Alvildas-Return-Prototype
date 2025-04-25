@@ -381,7 +381,7 @@ public class AlvildaController : WaveAffectedObject
 
 			// I added this, Game Enum are in the GameEnums script in the extensions folder.
             case AlvildaState.Cutscene:
-                curiousMarker.TurnOn();
+                curiousMarker.TurnOff();
 				movement.MoveTo(EndofLevelSpace.position);
                 break;
 

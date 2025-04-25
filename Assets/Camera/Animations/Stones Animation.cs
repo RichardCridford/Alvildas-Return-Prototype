@@ -6,6 +6,8 @@ using UnityEngine.SceneManagement;
 
 public class StonesAnimation : MonoBehaviour
 {
+
+    [SerializeField] AlvildaController alvildaController;
     [SerializeField] Animator animator;
     [SerializeField] AudioSource turningStones;
     private float delayInSeconds = 10f;
@@ -18,6 +20,8 @@ public class StonesAnimation : MonoBehaviour
 
         animator = GetComponent<Animator>();
         turningStones = GetComponent<AudioSource>();
+
+        alvildaController = FindObjectOfType<AlvildaController>();
     }
 
 
@@ -45,13 +49,14 @@ public class StonesAnimation : MonoBehaviour
         StartCoroutine(WaitAndLoad());
 
         // Move Alvilda to a new position between the stones
+        alvildaController.AlvildaEndLevel();
 
         // Trigger a light or particle effect
 
 
     }
 
-    
+
     IEnumerator WaitAndLoad()
     {
 
