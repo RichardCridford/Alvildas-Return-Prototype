@@ -331,6 +331,7 @@
 -analyzer:"C:/Program Files/Unity/Hub/Editor/2022.3.54f1/Editor/Data/Tools/Unity.SourceGenerators/Unity.SourceGenerators.dll"
 "Assets/Camera/Animations/Stones Animation.cs"
 "Assets/Camera/EndofLevel.cs"
+"Assets/Camera/ParticleTrails.cs"
 "Assets/Camera/Scripts/CameraMover.cs"
 "Assets/Camera/Scripts/Camera_Movement.cs"
 "Assets/Camera/Scripts/Camera_Trigger.cs"
