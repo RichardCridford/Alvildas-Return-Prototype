@@ -10,7 +10,11 @@ public class StonesAnimation : MonoBehaviour
     [SerializeField] AlvildaController alvildaController;
     [SerializeField] Animator animator;
     [SerializeField] AudioSource turningStones;
-    private float delayInSeconds = 10f;
+    [SerializeField] GameObject spinningTrail;
+
+    [SerializeField] private float delayInSecondsToMove = 2.0f;
+    [SerializeField] private float delayInSecondsToLoad = 0.1f;
+    
 
     
 
@@ -22,6 +26,7 @@ public class StonesAnimation : MonoBehaviour
         turningStones = GetComponent<AudioSource>();
 
         alvildaController = FindObjectOfType<AlvildaController>();
+        spinningTrail.SetActive(false);
     }
 
 
@@ -46,22 +51,25 @@ public class StonesAnimation : MonoBehaviour
         // stops the animation of the stones turning looping
         animator.speed = 0;
         
-        StartCoroutine(WaitAndLoad());
-
-        // Move Alvilda to a new position between the stones
-        alvildaController.AlvildaEndLevel();
-
         // Trigger a light or particle effect
+        spinningTrail.SetActive(true);
 
+        StartCoroutine(WaitAndLoad());
 
     }
 
 
     IEnumerator WaitAndLoad()
     {
+        // Wait so particle effect can finish
+        yield return new WaitForSeconds(delayInSecondsToMove);
+
+        // Move Alvilda to a new position between the stones
+        alvildaController.AlvildaEndLevel();
+
 
         // Wait
-        yield return new WaitForSeconds(delayInSeconds);
+        yield return new WaitForSeconds(delayInSecondsToLoad);
 
         // Load the next available scene
         SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex + 1);
