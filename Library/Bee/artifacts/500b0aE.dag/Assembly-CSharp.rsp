@@ -484,11 +484,11 @@
 "Assets/standard_assets/Utility/WaypointCircuit.cs"
 "Assets/standard_assets/Utility/WaypointProgressTracker.cs"
 "Assets/Story_Setup_Scene/Scripts/mouseCursorStory.cs"
-"Assets/test/alexander/AnimatedTextureOffset.cs"
-"Assets/test/alexander/GameObjectSwitcher.cs"
-"Assets/test/alexander/LightEffect.cs"
-"Assets/test/wave_test/TestPlane.cs"
-"Assets/test/wave_test/TestPlanePoint.cs"
+"Assets/test_old/alexander/AnimatedTextureOffset.cs"
+"Assets/test_old/alexander/GameObjectSwitcher.cs"
+"Assets/test_old/alexander/LightEffect.cs"
+"Assets/test_old/wave_test/TestPlane.cs"
+"Assets/test_old/wave_test/TestPlanePoint.cs"
 -langversion:9.0
 /deterministic
 /optimize+
